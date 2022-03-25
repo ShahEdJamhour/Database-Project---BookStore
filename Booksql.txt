@@ -1,0 +1,68 @@
+CREATE DATABASE COMP333;
+use comp333;
+
+create table Books(
+PublishingHouse varchar(40),
+BookID integer,
+BookName varchar(40),
+Category varchar(30),
+Price double,
+CostPrice double,
+NumberOfCopies integer,
+Author varchar(30),
+PublishDate Date,
+primary key(BookID,BookName));
+
+CREATE TABLE  Employees (
+	EM_ID int primary key auto_increment, 
+    Date_Of_Birth date ,
+    Address varchar(50),
+    NameEM varchar(20),
+    Gender varchar(30),
+    Phone_Number long , 
+    SalaryEmployees double , 
+    Hiring_Date date 
+    
+);
+
+create table clients(
+cid integer,
+cname varchar(32),
+area varchar(30),
+phone_num int,
+primary key (cid));
+
+ create table orders(
+order_num integer,
+cid int,
+order_date Date,
+primary key(order_num) ,
+foreign key (cid) references clients(cid));
+
+
+create table orderdetails (
+order_num integer,      
+BookID integer,
+product_name varchar(32),
+product_count integer,
+price double,
+primary key(order_num,BookID),
+foreign key(order_num) references orders(order_num),
+foreign key (BookID) references Books(BookID));
+
+
+create table bill(
+bill_num int,
+cid int,
+total_price double,
+bill_date date,
+order_num int,
+isPaid boolean,
+primary key(bill_num),
+foreign key(cid) references clients(cid),
+foreign key(order_num) references orderdetails(order_num));
+
+select * from orders;
+
+insert into orderdetails values 
+(1,1234,'Dune',2,56.0);
