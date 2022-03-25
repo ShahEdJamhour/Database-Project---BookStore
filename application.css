@@ -1,0 +1,23 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+VBox{
+		
+}
+/*.root
+{
+    -fx-background-image: url('book.jfif');
+    -fx-background-size: cover;
+}*/
+
+.tf {
+    -fx-background-color: rosybrown ;
+
+	-fx-border-color: darkviolet;
+	-fx-prompt-text-fill:white;
+}
+
+
+
+
+
+
